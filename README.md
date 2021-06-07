@@ -56,5 +56,5 @@ argocd-ingress   <none>   your.devops.com   x.x.x.x          80, 443   25h
 ```
 
 Login url is 
-`https://argocd.cts-svt.limited-use.ibm.com`
+`https://your.devops.com`
 
