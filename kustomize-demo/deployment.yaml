@@ -27,7 +27,7 @@ spec:
         app.kubernetes.io/name: argocd-sops
     spec:
       containers:
-      - image: dllhb/go-demo:v1.1.2
+      - image: dllhb/go-demo:v1.1.3
         imagePullPolicy: IfNotPresent
         name: argocd-sops
         envFrom:
