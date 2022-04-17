@@ -2,19 +2,19 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app.kubernetes.io/instance: qecon
+    app.kubernetes.io/instance: argocd-sops
     app.kubernetes.io/managed-by: Helm
-    app.kubernetes.io/name: qecon
-  name: qecon
-  namespace: qecon
+    app.kubernetes.io/name: argocd-sops
+  name: argocd-sops
+  namespace: argocd-sops
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app.kubernetes.io/instance: qecon
-      app.kubernetes.io/name: qecon
+      app.kubernetes.io/instance: argocd-sops
+      app.kubernetes.io/name: argocd-sops
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -23,16 +23,16 @@ spec:
   template:
     metadata:
       labels:
-        app.kubernetes.io/instance: qecon
-        app.kubernetes.io/name: qecon
+        app.kubernetes.io/instance: argocd-sops
+        app.kubernetes.io/name: argocd-sops
     spec:
       containers:
       - image: dllhb/go-demo:v1.1.2
         imagePullPolicy: IfNotPresent
-        name: qecon
+        name: argocd-sops
         envFrom:
         - secretRef:
-            name: qecon
+            name: argocd-sops
         ports:
         - containerPort: 9999
           name: http
